@@ -1,3 +1,7 @@
+#include "FreeRTOS.h"
+#include "task.h"'
+#include "queue.h"
+
 #include "em_device.h"
 #include "em_chip.h"
 #include "em_cmu.h"
@@ -9,6 +13,8 @@ void Delay(uint32_t dlyTicks);
 
 int main (void)
 {
+    static StaticTask_t exampleTaskTCB;
+    static StackType_t exampleTaskStack[ configMINIMAL_STACK_SIZE ];
     CMU_ClockEnable(cmuClock_HFPER, true);
     CMU_ClockEnable(cmuClock_GPIO, true);
 

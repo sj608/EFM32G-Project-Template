@@ -39,6 +39,8 @@ add_executable(${EXECUTABLE} ${SRC_FILES})
 # List of compiler defines, prefix with -D compiler option
 target_compile_definitions(${EXECUTABLE} PRIVATE
         -DEFM32G890F128=1
+        -DFREERTOS_CONFIG_FILE_DIRECTORY=FreeRTOS/FreeRTOSConfig.cmake_host_system_information
+        -DFREERTOS_PORT=GCC_ARM_CM3
         )
 
 # List of includ directories
